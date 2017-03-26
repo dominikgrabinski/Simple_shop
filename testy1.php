@@ -1,0 +1,2 @@
+<?php
+koniec pleców
