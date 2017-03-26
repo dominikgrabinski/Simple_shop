@@ -1,2 +1,2 @@
 <?php
-koniec pleców
+echo "koniec pleców"; 
