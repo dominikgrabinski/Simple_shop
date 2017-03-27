@@ -10,3 +10,7 @@ Niewiem jak
 
 
 zzzzzzznnnnnmmmmm
+
+
+
+lnmlkmndlkfnlksdnfkl;fmlsdlmkfsd
