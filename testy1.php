@@ -1,2 +1,0 @@
-<?php
-echo "koniec pleców"; 
