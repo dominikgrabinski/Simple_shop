@@ -6,5 +6,5 @@
  * and open the template in the editor.
  */
 
-Niewiem jak 
+echo "XXXYUUU";
 
