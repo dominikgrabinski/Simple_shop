@@ -82,7 +82,7 @@
             <div class="modal-body">
                 <div class="row">
                     <div class="col-md-6">
-                        <form action="/login_check" method="post">
+                        <form action="../Verify/login_check.php" method="post">
                             <div class="form-group"><label>E-mail: </label><input type="text" name="email" value="" class="hidden"><input type="text" name="_username" class="form-control"></div>
                             <div class="form-group"><label>Hasło: </label><input type="password" name="_password" value="" class="form-control"></div>
                             <div>
@@ -117,6 +117,45 @@
             </div>
         </div>
         
+        
+        <div class="modal-content col-md-6 col-md-offset-3">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">Szybka rejestracja</h4>
+            </div>
+            <div class="modal-body">
+
+                <p>Podaj swój adres e-mail - wyślemy Ci natychmiast wiadomość z linkiem aktywującym Twoje nowe konto.</p>
+                
+                <form action="/account/register/quick" method="post">
+                    <div class="form-group">
+                        <label for="Register_username" class="required">E-mail</label>
+                        <div class="hidden"><input type="text" name="email" value=""></div>
+                        <input type="text" id="Register_username" name="Register[username]" required="required" class="form-control">
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-1 text-center"><input type="checkbox" id="Register_accept_terms" name="Register[accept_terms]" required="required" value="1"></div>
+                            <div class="col-xs-11 text-justify">
+                                <div style="line-height: 1.3em; font-size: 0.75em;">Akceptuję <a href="#">regulamin serwisu</a> oraz wyrażam zgodę na umieszczenie moich danych osobowych w bazie danych oraz ich przetwarzanie i wykorzystywanie do celów marketingowych przez firmę Ultima s.c., ul. Baleya 10/40, 02-132 Warszawa, zgodnie z treścią ustawy z 29.08.1997 r. o ochronie danych osobowych (Dz.U. Nr 133, poz. 883). Oświadczam, że cel przetwarzania moich danych osobowych jest mi znany oraz jestem świadomy(a) faktu przysługującego mi wglądu do moich danych osobowych oraz prawa ich poprawiania.</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="text-center">
+                            <input class="btn btn-primary" type="submit" name="submit" value="Załóż konto">
+                            <input type="hidden" id="Register_type" name="Register[type]" value="1"><input type="hidden" id="Register__token" name="Register[_token]" value="35fccfd9cd96d879ef3976151c6b96221f974381">
+                        </div>
+                    </div>
+                </form>
+                
+            </div>
+            <div class="modal-footer" style="margin-top: 0;">
+                <div class="text-justify" style="font-size: 0.9em; line-height: 1.2em;">Masz już konto? <a href="#" data-toggle="modal" data-target="#login" data-dismiss="modal">Zaloguj się</a>.</div>
+            </div>
+        </div>
         
         
         <script src="../CSS_JS_BOOT/jquery.min.js" type="text/javascript">  </script>
