@@ -1,5 +1,5 @@
 $("#login_button").click(function(){
-    $("#logowanie_box").fadeIn();
+    $("#logowanie_box").fadeIn("slow");
 
 });
 
