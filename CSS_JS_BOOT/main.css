@@ -15,8 +15,18 @@
 }
 
 
-.index1{
-    background-image: url('../img/1.jpg');
-    background-size: cover;
+.index1 { 
+  background: url(../img/2.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
+
+
+/*
+-bootstrap pozycja tła i kolor pod przyciskami się zmienił
+-slideshow z backgroundu
+-przycick na backgroundzie z konkretna gra 
+-email po rejestracji i logowaniu */
 

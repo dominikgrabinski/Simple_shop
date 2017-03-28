@@ -16,7 +16,9 @@
         echo "<pre>    Tu będzie Twój koszyk</pre>"
         ?>
         
-        
+        <button type="button" class="btn btn-default" onclick="history.back();" style="font-weight: normal;">
+        Powrót do sklepu        
+        </button>
         
         <script src="../CSS_JS_BOOT/jquery.min.js" type="text/javascript">  </script>
         <script src="../CSS_JS_BOOT/jquery.js" type="text/javascript">  </script>
