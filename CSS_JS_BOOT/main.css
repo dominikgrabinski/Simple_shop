@@ -13,3 +13,10 @@
     background-clip: padding-box;
     outline: 0;
 }
+
+
+.index1{
+    background-image: url('../img/1.jpg');
+    background-size: cover;
+}
+
