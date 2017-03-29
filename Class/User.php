@@ -21,6 +21,9 @@ class User {
         $this->firstLoginDate="";
         $this->lastLoginDate="";
     }
+     public function setId($newId) {
+	return $this->id = $newId;     
+	}
     
     public function getId() {
 	return $this->id;
@@ -47,9 +50,12 @@ class User {
     }
     
     public function setPassword($newPassword) {
-        $newHashedPassword = hash('sha256',$newPassword);
-        return $this->password = $newHashedPassword;
-	}
+        if(empty($this->salt)){
+            throw new Exception("SALT IS EMPTY!", 1);
+        }
+        $this->password = hash('sha256',$newPassword.$this->salt);
+        return $this->password;
+    }
         
     public function getSalt(){
         return $this->salt;
@@ -58,7 +64,9 @@ class User {
     public function setSalt($newSalt){
         return $this->salt=$newSalt;
     }
-    
+    public static function generateRandomSalt(){
+        return hash('sha256',rand());
+    }
     public function getFirstLoginDate(){
         return $this->firstLoginDate;
     }
@@ -84,7 +92,7 @@ class User {
              . "('$this->name', '$this->email', '$this->password', '$this->salt', "
              . "'$this->firstLoginDate','$this->lastLoginDate')";
        $result = $connection->query($sql);
-
+       
 		    if($result == true)
         {
           $this->id = $connection->insert_id;
@@ -93,8 +101,10 @@ class User {
     }
     else
     {
-      $sql = "UPDATE Users SET username='$this->UserName',email='$this->email',
-      hashed_password='$this->hashedPassword' WHERE id=$this->id";
+      if(empty($this->lastLoginDate)){
+          return false;
+      }
+      $sql = "UPDATE Users SET last_login_date ='$this->lastLoginDate' WHERE id=$this->id";
 
       $result = $connection->query($sql); if($result == true)
       {

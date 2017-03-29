@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+<?php session_start();?>
 <html class="index1">
     <head>
         <title>Sklep z grami</title>
@@ -8,6 +8,9 @@
         
         <link href="../CSS_JS_BOOT/bootstrap.min.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="../CSS_JS_BOOT/main.css" type="text/css">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+        
     </head>
     <body >
       
@@ -62,35 +65,24 @@
       </ul>
         
       <form class="navbar-form navbar-left">
-        <div class="form-group" style="height: 35px; border-bottom:1px solid #3498DF " >
-         <input type="text" name="keywords" placeholder="Nazwa gry..." 
+        <div class="form-group ui-widget" style="height: 35px; border-bottom:1px solid #3498DF " >
+            <input id="tags" type="text" name="keywords" placeholder="Nazwa gry..." 
                 class="ui-autocomplete-input" autocomplete="off"style="height: 35px;" >
          
 <!--sciagniete z neta z powyzsze 7 linijek i nie tylko :)-->
 
         </div>
+          
+<!--          <ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content ui-corner-all" id="ui-id-1" tabindex="0" style="display: block; top: 54px; left: 295px; width: 262px;"><li class="ui-autocomplete-category">Produkty</li><li class="ui-menu-item" role="presentation"><a id="ui-id-134" class="ui-corner-all" tabindex="-1">Guardians of the Galaxy Metals <strong>Di</strong>ecast Mini Figure Potted Groot 10 cm Gadżety (Gadżety)</a></li><li class="ui-menu-item" role="presentation"><a id="ui-id-135" class="ui-corner-all" tabindex="-1">Dragonball Z Super Master Stars Piece Figure Vegeta Manga <strong>Di</strong>mensions 24 cm Gadżety (Gadżety)</a></li><li class="ui-menu-item" role="presentation"><a id="ui-id-136" class="ui-corner-all" tabindex="-1">Dragonball Z Super Master Stars Piece Figure Trunks Manga <strong>Di</strong>mensions 24 cm Gadżety (Gadżety)</a></li><li class="ui-menu-item" role="presentation"><a id="ui-id-137" class="ui-corner-all" tabindex="-1"><strong>Di</strong>RT 4 PC (PC)</a></li><li class="ui-menu-item" role="presentation"><a id="ui-id-138" class="ui-corner-all" tabindex="-1"><strong>Di</strong>RT 4 PS4 (PlayStation 4)</a></li><li class="ui-menu-item" role="presentation"><a id="ui-id-139" class="ui-corner-all" tabindex="-1">Stellaris: Utopia (PC/MAC/LX) PL <strong>DI</strong>GITAL Klucze (Klucze do gier)</a></li><li class="ui-menu-item" role="presentation"><a id="ui-id-140" class="ui-corner-all" tabindex="-1">BeatCop (PC/MAC/LX) PL <strong>DI</strong>GITAL + BONUSY! Klucze (Klucze do gier)</a></li><li class="ui-menu-item" role="presentation"><a id="ui-id-141" class="ui-corner-all" tabindex="-1">Śródziemie: Cień Wojny - Złota Edycja (PC) PL <strong>DI</strong>GITAL + BONUS! Klucze (Klucze do gier)</a></li><li class="ui-menu-item" role="presentation"><a id="ui-id-142" class="ui-corner-all" tabindex="-1">Impact Winter (PC) PL <strong>DI</strong>GITAL + BONUS! Klucze (Klucze do gier)</a></li><li class="ui-menu-item" role="presentation"><a id="ui-id-143" class="ui-corner-all" tabindex="-1"><strong>Di</strong>RT 4 XONE (Xbox One)</a></li><li class="ui-autocomplete-more ui-menu-item" role="presentation"><a href="/search/?keywords=di" id="ui-id-144" class="ui-corner-all" tabindex="-1"><strong>Zobacz więcej (121)...<strong></strong></strong></a></li></ul>-->
         <button style="border-bottom: 2px solid #3498DF; height: 35px;" type="submit" class="btn btn-default">Szukaj
         </button>
    
       </form>
-        
+         
       <ul class="nav navbar-nav navbar-right">
         <li> <a href="#" data-toggle="modal" data-target="#login" id="login_button"> Moje konto</a></li>
         <li> <a href="../Sites/basket.php" data-toggle="modal"> Mój koszyk</a></li>
-        
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" 
-             aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </li>
-        
+        <li> <a href="index1.php">Witaj: <?php if(!empty($_SESSION['email'])) echo $_SESSION['email']; ?></a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
  
@@ -189,9 +181,10 @@
         </div>
         
         <script src="../CSS_JS_BOOT/jquery.min.js" type="text/javascript">  </script>
-        <script src="../CSS_JS_BOOT/jquery.js" type="text/javascript">  </script>
+        <!--<script src="../CSS_JS_BOOT/jquery.js" type="text/javascript">  </script>-->
         <script src="../CSS_JS_BOOT/bootstrap.min.js" type="text/javascript">  </script>
         <script src="../CSS_JS_BOOT/app.js" type="text/javascript">  </script>
-        
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
     </body>
 </html>

@@ -19,21 +19,21 @@ if($_SERVER['REQUEST_METHOD']=='POST')
         if(mysqli_num_rows($query) > 0)
         {
           echo "Taki email istnieje już w bazie!";
-          header( "refresh:2;url=registerhtml.php" );
+          header( "refresh:2;url=../HTML/index1.php" );
         }
         else
         {
           $user = new User();
-          $user->setEmail(trim($_POST['email']));
+          $user->setEmail(trim($_POST['email'])); 
+          $user->setSalt(User::generateRandomSalt());
           $user->setPassword($_POST['password']);
           $user->setName('');
-          $user->setSalt('');
           $user->setFirstLoginDate();
           $user->setLastLoginDate();
           $user->savetoDB($connection);
 
           echo "Zarejestrowano!!";
-//          header( "refresh:1;url=../HTML/index1.html" );
+          header( "refresh:1;url=../HTML/index1.php" );
         }
       }
       else
@@ -93,5 +93,4 @@ if($_SERVER['REQUEST_METHOD']=='POST')
 //		$delete=mysql_query("delete from verify where id='$id' and code='$code'");
 //	}
 //}
-
 ?>
