@@ -2,7 +2,7 @@
 
 require '../SRC/config.php';
 
-class User{
+class User {
     private $id;
     private $name;
     private $email;
