@@ -16,7 +16,8 @@
   <div class="container-fluid">
  
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" 
+              data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -62,7 +63,11 @@
         
       <form class="navbar-form navbar-left">
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Wpisz tytuł...">
+         <input type="text" name="keywords" placeholder="Nazwa gry..." 
+                class="ui-autocomplete-input" autocomplete="off">
+         
+<!--sciagniete z neta z powyzsze-->
+
         </div>
         <button type="submit" class="btn btn-default">Szukaj</button>
       </form>
@@ -72,7 +77,8 @@
         <li> <a href="../Sites/basket.php" data-toggle="modal"> Mój koszyk</a></li>
         
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" 
+             aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
           
           <ul class="dropdown-menu">
             <li><a href="#">Action</a></li>
@@ -98,13 +104,16 @@
                 <div class="row">
                     <div class="col-md-6">
                         <form action="../Verify/login_check.php" method="POST">
-                            <div class="form-group"><label>E-mail: </label><input type="text" class="hidden"><input type="text" name="email" class="form-control"></div>
-                            <div class="form-group"><label>Hasło: </label><input type="password" name="password" value="" class="form-control"></div>
+                            <div class="form-group"><label>E-mail: </label>
+                                <input type="text" class="hidden"><input type="text" name="email" class="form-control">
+                            </div>
+                            <div class="form-group"><label>Hasło: </label>
+                                <input type="password" name="password" value="" class="form-control"></div>
                             <div>
                                 <div class="text-center">
                                     <input class="btn btn-primary" type="submit" name="submit" value="Zaloguj">
                                 </div>
-                                                            </div>
+                            </div>
                         </form>
                     </div>
                     
