@@ -12,7 +12,8 @@ session_start();
       $user = new User();
       $pass = $user->setPassword($_POST['password']);
 
-      $query="SELECT COUNT(*) as ilosc,id,username FROM Users WHERE email='".$_POST['email']."' AND hashed_password='$pass'";
+      $query="SELECT COUNT(*) as ilosc,id,name FROM Users WHERE email='".$_POST['email']."' AND password='$pass'";
+      
       $result = $connection->query($query);
       $row = $result->fetch_assoc();
       if($row['ilosc'] == 1 )
@@ -20,27 +21,26 @@ session_start();
         // session_regenerate_id();
         //$_SESSION['userIP'] = $_SERVER['REMOTE_IP'];
         $_SESSION['userID'] = $row['id'];
-        $_SESSION['username'] = $row['username'];
+  
         echo "Trwa przekierowanie na strone główna";
-        header( "refresh:3;url=glowna.php" );
+        header( "refresh:1;url=../HTML/index1.html" );
       }
       else
       {
-        echo "NIET";
-        header( "refresh:2;url=loginhtml.php" );
-
+        echo "Błędne dane logowania spróbuj jesze raz";
+        header( "refresh:2;url=../HTML/index1.html" );
       }
     }
     else
     {
     echo "Podaj hasło!";
-    header( "refresh:3;url=loginhtml.php" );
+//    header( "refresh:3;url=loginhtml.php" );
     }
   }
   else
   {
     echo "Podaj email!";
-    header( "refresh:3;url=loginhtml.php" );
+//    header( "refresh:3;url=loginhtml.php" );
   }
 
   ?>

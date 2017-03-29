@@ -64,7 +64,8 @@ class User {
     }
     
     public function setFirstLoginDate(){
-        $this->creationDate =date('Y-m-d H:i:s');
+        $this->firstLoginDate=date('Y-m-d H:i:s');
+        return $this;
     }
     
     public function getLastLoginDate(){
@@ -72,14 +73,16 @@ class User {
     }
     
     public function setLastLoginDate(){
-//        pobrac datę z mysql
+        $this->lastLoginDate=date('Y-m-d H:i:s');
+        return $this;
     }
     
     public function saveToDB(mysqli $connection) {
 		if($this->id == -1)
     {
-	     $sql = "INSERT INTO Users(name, email, password, salt, first_login_date, last_login_date)
-       VALUES ('$this->name', '$this->email', '$this->password', '$this->salt', '$this->firstLoginDate','$this->lastLoginDate',)";
+	     $sql = "INSERT INTO Users(name, email, password, salt, first_login_date, last_login_date) VALUES "
+             . "('$this->name', '$this->email', '$this->password', '$this->salt', "
+             . "'$this->firstLoginDate','$this->lastLoginDate')";
        $result = $connection->query($sql);
 
 		    if($result == true)
@@ -105,3 +108,15 @@ class User {
     
 }
 
+//$oUser = new User();
+//$oUser->setName('Janusz');
+//$oUser->setEmail('Janusz@janusz.pl');
+//$oUser->setPassword('Janusz');
+//$oUser->setSalt('xxx');
+//$oUser->setFirstLoginDate();
+//$oUser->setLastLoginDate();
+//
+//$oUser->savetoDB($connection);
+//
+//var_dump($oUser);
+//var_dump($connection);
