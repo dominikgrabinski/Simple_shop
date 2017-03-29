@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.6deb1+deb.cihar.com~xenial.2
+-- version 4.6.5.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Czas generowania: 29 Mar 2017, 13:10
--- Wersja serwera: 5.7.17
--- Wersja PHP: 7.0.15-0ubuntu0.16.04.4
+-- Czas generowania: 29 Mar 2017, 14:20
+-- Wersja serwera: 5.7.16
+-- Wersja PHP: 5.6.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -78,7 +78,7 @@ CREATE TABLE `Products` (
   `kategoria_wiekowa` varchar(30) NOT NULL,
   `wydawca` varchar(50) NOT NULL,
   `jezyk` varchar(20) NOT NULL,
-  `data_premiery` datetime NOT NULL,
+  `data_premiery` date NOT NULL,
   `promocja` varchar(50) NOT NULL,
   `edycja` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -109,6 +109,31 @@ CREATE TABLE `Users` (
   `first_login_date` datetime NOT NULL,
   `last_login_date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `verified_user`
+--
+
+CREATE TABLE `verified_user` (
+  `id` int(11) NOT NULL,
+  `email` text NOT NULL,
+  `password` text NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `verify`
+--
+
+CREATE TABLE `verify` (
+  `id` int(11) NOT NULL,
+  `email` text NOT NULL,
+  `password` text NOT NULL,
+  `code` text NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Indeksy dla zrzutów tabel
@@ -159,6 +184,18 @@ ALTER TABLE `Users`
   ADD UNIQUE KEY `email` (`email`);
 
 --
+-- Indexes for table `verified_user`
+--
+ALTER TABLE `verified_user`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `verify`
+--
+ALTER TABLE `verify`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -192,6 +229,16 @@ ALTER TABLE `Status`
 --
 ALTER TABLE `Users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT dla tabeli `verified_user`
+--
+ALTER TABLE `verified_user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT dla tabeli `verify`
+--
+ALTER TABLE `verify`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- Ograniczenia dla zrzutów tabel
 --
