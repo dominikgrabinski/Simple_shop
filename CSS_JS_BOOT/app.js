@@ -3,6 +3,7 @@ $('#login_button').click(function(){
 
 });
 
+
 $(document).mouseup(function (e)
 {
     var container = $("#logowanie_box");
