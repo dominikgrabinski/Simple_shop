@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Czas generowania: 29 Mar 2017, 14:20
+-- Czas generowania: 30 Mar 2017, 17:01
 -- Wersja serwera: 5.7.16
--- Wersja PHP: 5.6.28
+-- Wersja PHP: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -71,7 +71,7 @@ CREATE TABLE `Orders` (
 CREATE TABLE `Products` (
   `id` int(11) NOT NULL,
   `tytul` varchar(255) NOT NULL,
-  `platfotma` varchar(50) NOT NULL,
+  `platforma` varchar(50) NOT NULL,
   `gatunek` varchar(30) NOT NULL,
   `opis` varchar(255) NOT NULL,
   `cena` decimal(5,2) NOT NULL,
@@ -103,12 +103,24 @@ CREATE TABLE `Status` (
 CREATE TABLE `Users` (
   `id` int(11) NOT NULL,
   `name` varchar(20) NOT NULL,
-  `email` varchar(20) NOT NULL,
+  `email` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL,
   `salt` varchar(255) NOT NULL,
   `first_login_date` datetime NOT NULL,
   `last_login_date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Zrzut danych tabeli `Users`
+--
+
+INSERT INTO `Users` (`id`, `name`, `email`, `password`, `salt`, `first_login_date`, `last_login_date`) VALUES
+(2, 'Janusz', 'Janusz@janusz.pl', '1eac2457beaf09612bfb9674afd415662926ab40454a10ac9b2c321978b62456', 'xxx', '2017-03-29 15:51:31', '2017-03-29 19:54:12'),
+(9, '', 'zz', '4a60bf7d4bc1e485744cf7e8d0860524752fca1ce42331be7c439fd23043f151', '', '2017-03-29 19:32:50', '2017-03-29 19:32:50'),
+(12, '', 'tomek', 'a6bbc4b66450dd5910cbdf7f914792e63ba52418817765095952bfea7b751d70', '', '2017-03-29 19:35:05', '2017-03-29 19:35:05'),
+(13, '', 'dupa', '4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a', '4b062e70d8b471ab7a93e8d244b6fd03e3e0a165f1008ffb5ed51a0dbc5f3e43', '2017-03-29 20:14:50', '2017-03-29 20:33:44'),
+(14, '', 'xx', 'ab42081446e87db130555f711ae7d15373c81663a4b618aca776607ecb7b22e8', '37598cb65b7f8ff2588cafc363597d4f956a32dc2653fbc937cdea048750092d', '2017-03-29 20:35:02', '2017-03-30 16:54:54'),
+(15, '', 'dlugihujekdlugi1@wp.pl', 'f52105ff5c8333432eb3ffbb02f27fe05c0e2cee41a7fe5107c5d3f0e7ab0115', '7e3ddda87f1fde92d36f967734720f9edd3044483b17bb6abf1dbb7da4486d8c', '2017-03-29 20:49:47', '2017-03-29 20:50:08');
 
 -- --------------------------------------------------------
 
@@ -143,9 +155,8 @@ CREATE TABLE `verify` (
 -- Indexes for table `Admin`
 --
 ALTER TABLE `Admin`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `name` (`name`),
-  ADD UNIQUE KEY `email` (`email`);
+  ADD PRIMARY KEY (`id`);
+ALTER TABLE `Admin` ADD FULLTEXT KEY `email` (`email`);
 
 --
 -- Indexes for table `Magazine`
@@ -180,7 +191,6 @@ ALTER TABLE `Status`
 --
 ALTER TABLE `Users`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `name` (`name`),
   ADD UNIQUE KEY `email` (`email`);
 
 --
@@ -228,7 +238,7 @@ ALTER TABLE `Status`
 -- AUTO_INCREMENT dla tabeli `Users`
 --
 ALTER TABLE `Users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT dla tabeli `verified_user`
 --

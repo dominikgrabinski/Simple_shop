@@ -20,13 +20,13 @@ class User {
         $this->salt="";
         $this->firstLoginDate="";
         $this->lastLoginDate="";
-    }
-    public function setId($newId) {
-	return $this->id = $newId;     
-	}
-    
+    }  
     public function getId() {
 	return $this->id;
+	}
+            
+    public function setId($newId) {
+    return $this->id = $newId;     
 	}
             
     public function getName() {
