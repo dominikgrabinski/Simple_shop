@@ -9,6 +9,7 @@
         <link href="../CSS_JS_BOOT/bootstrap.min.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="../CSS_JS_BOOT/main.css" type="text/css">
         <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="../CSS_JS_BOOT/jquery.min.js" type="text/javascript">  </script>
 
         
     </head>
@@ -182,8 +183,27 @@
             </div>
         </div>
 
+<?php
+if(isset($_SESSION['email'])){ ?>
+        <script>
+            $('#login_button').click(function(){
+
+    $(location).attr('href', 'http://localhost/kurs/sklep/Simple_shop/HTML/account.php');
+
+});
+</script>
+<?php }else{?>
+<script>
+    $('#login_button').click(function(){
+    $('#logowanie_box').fadeIn('slow');
+
+
+});</script>
+    <?php }?>
+    
+
         
-        <script src="../CSS_JS_BOOT/jquery.min.js" type="text/javascript">  </script>
+        
         <!--<script src="../CSS_JS_BOOT/jquery.js" type="text/javascript">  </script>-->
         <script src="../CSS_JS_BOOT/bootstrap.min.js" type="text/javascript">  </script>
         <script src="../CSS_JS_BOOT/app.js" type="text/javascript">  </script>

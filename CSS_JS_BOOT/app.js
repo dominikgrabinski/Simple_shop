@@ -1,7 +1,8 @@
-$('#login_button').click(function(){
-    $('#logowanie_box').fadeIn('slow');
-
-});
+//$('#login_button').click(function(){
+////    $('#logowanie_box').fadeIn('slow');
+//    $(location).attr('href', 'http://stackoverflow.com')
+//
+//});
 
 
 $(document).mouseup(function (e)
