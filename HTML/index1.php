@@ -26,7 +26,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index1.html">Nazwa</a>
+      <a class="navbar-brand" href="index1.php">Nazwa</a>
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -37,7 +37,7 @@
              aria-haspopup="true" aria-expanded="false">PlayStation 3 <span class="caret"></span>
           </a>
           <ul class="dropdown-menu">
-            <li><a href="#">Gry</a></li>
+            <li><a href="ps3.php">Gry</a></li>
             <li><a href="#">Kody PSN</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="#">Bestsellery</a></li>
@@ -52,7 +52,7 @@
              aria-haspopup="true" aria-expanded="false">PlayStation 4 <span class="caret"></span>
           </a>
           <ul class="dropdown-menu">
-    <li><a href="#">Gry</a></li>
+    <li><a href="ps4.php">Gry</a></li>
             <li><a href="#">Kody PSN</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="#">Bestsellery</a></li>
@@ -181,6 +181,7 @@
                 <div class="text-justify" style="font-size: 0.9em; line-height: 1.2em;">Masz już konto? <a href="#" data-toggle="modal" data-target="#login" data-dismiss="modal">Zaloguj się</a>.</div>
             </div>
         </div>
+
         
         <script src="../CSS_JS_BOOT/jquery.min.js" type="text/javascript">  </script>
         <!--<script src="../CSS_JS_BOOT/jquery.js" type="text/javascript">  </script>-->

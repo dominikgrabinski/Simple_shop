@@ -21,7 +21,7 @@ class User {
         $this->firstLoginDate="";
         $this->lastLoginDate="";
     }
-     public function setId($newId) {
+    public function setId($newId) {
 	return $this->id = $newId;     
 	}
     

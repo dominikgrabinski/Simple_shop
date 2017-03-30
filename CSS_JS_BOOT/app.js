@@ -1,10 +1,7 @@
-$("#login_button").click(function(){
-    $("#logowanie_box").fadeIn("slow");
+$('#login_button').click(function(){
+    $('#logowanie_box').fadeIn('slow');
 
 });
-
-
-  
 
 $(document).mouseup(function (e)
 {
@@ -62,4 +59,8 @@ $(".close").click(function(){
     $( "#tags" ).autocomplete({
       source: availableTags
     });
+  } );
+  
+  $( function() {
+    $( "#accordion" ).accordion();
   } );
