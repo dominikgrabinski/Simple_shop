@@ -69,11 +69,11 @@ class Products {
     }
     
     public function setCena($cena) {
-        if (is_numeric($cena)) {
+        //if (is_numeric($cena)) {
             $this->cena = $cena;
-        } else {
-            echo "Podaj cenę w formacie 0.00";
-        }
+        //} else {
+        //    echo "Podaj cenę w formacie 0.00";
+        //}
     }
     
     public function getCena() {
@@ -130,13 +130,15 @@ class Products {
     }
     
     //szukanie po tytule, po konsoli
-    public function loadProductByTitle(mysqli $connection, $tytul) {
+    public function loadProductByTitle(mysqli $connection, $id) {
         
-        $q = "SELECT * From Products WHERE tytul = $tytul";
+        $q = "SELECT * FROM Products WHERE tytul = '$id'";
         $result = $connection->query($q);
         
-        if ($result == TRUE && $result->num_rows !=0) {
-            foreach ($result as $row) {
+        if ($result == TRUE && $result->num_rows != 0) {
+            
+                $row = $result->fetch_assoc();
+                
                 $oProduct = new Products();
                 $oProduct->cena = $row['cena'];
                 $oProduct->dataPremiery = $row['data_premiery'];
@@ -146,19 +148,59 @@ class Products {
                 $oProduct->kategoriaWiekowa = $row['kategoria_wiekowa'];
                 $oProduct->opis = $row['opis'];
                 $oProduct->platforma = $row['platforma'];
-                $oProduct->promocja = row['promocja'];
+                $oProduct->promocja = $row['promocja'];
                 $oProduct->tytul = $row['tytul'];
                 $oProduct->wydawca = $row['wydawca'];
-            }    
+                echo "ok";
+                return $oProduct;
+
         }
-        return null;    
+        echo "dupa";
+        return NULL;    
+    }
+    
+    public function saveToDB (mysqli $connection) {
+        if ($this->id == -1) {
+            $q = "INSERT INTO Products(cena, data_premiery, edycja, gatunek, jezyk, kategoria_wiekowa, opis, platforma, promocja, tytul, wydawca) VALUES('$this->cena', '$this->dataPremiery', '$this->edycja', '$this->gatunek', '$this->jezyk', '$this->kategoriaWiekowa', '$this->opis', '$this->platforma', '$this->promocja', '$this->tytul', '$this->wydawca')";
+        
+            $result = $connection->query($q);
+            
+            if ($result == TRUE) {
+                $this->id = $connection->insert_id;
+                //echo "poszło";
+            }
+        } else {
+            $q = "UPDATE Products SET cena = '$this->cena', data_premiery = '$this->dataPremiery', edycja = '$this->edycja', gatunek = '$this->gatunek', jezyk = '$this->jezyk', kategoria_wiekowa = '$this->kategoriaWiekowa', opis = '$this->opis', platforma = '$this->platforma', promocja = '$this->promocja', tytul = '$this->tytul', wydawca = '$this->wydawca' WHERE id = $this->id";
+            
+            $result = $connection->query($q);
+            if ($result == TRUE) {
+                return TRUE;
+            }
+        }
+        //echo "NIE !!";
+        return FALSE;
     }
     
     
-    
-    
-    
 }
+
+//$oPro = new Products();
+//$oPro->setCena(199.99);
+//$oPro->setDataPremiery('2012-12-30');
+//$oPro->setEdycja('pudełkowa');
+//$oPro->setGatunek('przygoda');
+//$oPro->setJezyk('PL');
+//$oPro->setKategoriaWiekowa('15+');
+//$oPro->setOpis('świetna gra nie wiem o czym');
+//$oPro->setPlatforma('PS4');
+//$oPro->setPromocja('-25%');
+//$oPro->setTytul('Tomb Raider');
+//$oPro->setWydawca('chyba EA');
+
+//$oProdu
+//var_dump($oPro->loadProductByTitle($connection, 'Tomb Raider'));
+//var_dump($oPro);
+//var_dump(Products::loadProductByTitle($connection, 'Tomb Raider'));
 
 
 
