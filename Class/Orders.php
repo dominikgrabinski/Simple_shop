@@ -30,7 +30,7 @@ class Orders {
     }
     
     public function setStatusId($statusId) {
-        $this->statusId - $statusId;
+        $this->statusId = $statusId;
     }
     
     public function getStatusId() {
@@ -59,6 +59,7 @@ class Orders {
         
         if ($result == TRUE) {
             $this->id = $connection->insert_id;
+            
         } else {
             $q = "UPDATE Orders SET adres_zamowienia = '$this->adresZamownienia', Status_id = '$this->statusId', suma_do_zaplaty = '$this->sumaDoZaplaty', User_id = '$this->userId'";
             
@@ -68,9 +69,17 @@ class Orders {
             }
             
         }
-    
+        
         return FALSE;
     }
    
 }
+
+//$oOrd = new Orders();
+//$oOrd->setStatusId(3);
+//$oOrd->setUserId(14);
+//$oOrd->setAdresZamowienia('ul. Kubusia Puchatka 666/69 00-999 Wa-wa');
+//$oOrd->setSumaDoZaplaty(599.99);
+//$oOrd->saveToDB($connection);
+//var_dump($oOrd);
 

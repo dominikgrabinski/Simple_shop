@@ -80,8 +80,8 @@ class Magazine {
 //$oMag = new Magazine();
 //$oMag->setDostepnosc('TAK');
 //$oMag->setIloscWMagazynie(100);
-//$oMag->setOrdersId(5);
-//$oMag->setProductsId(7);
+//$oMag->setOrdersId(1);
+//$oMag->setProductsId(2);
 //$oMag->saveToDB($connection);
 //
 //var_dump($oMag);

@@ -1,5 +1,7 @@
 <?php
 
+//wyszukiwanie wszystkich gier
+
 require '../SRC/config.php';
 
 class Products {
