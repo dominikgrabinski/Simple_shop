@@ -86,36 +86,6 @@ session_start();?>
                         
                         
                         echo "<td colspan=2>" .$searchGames->getGatunek()."</td></tr>";
-//            foreach ($searchGames as $value) 
-//                {
-//                   
-//                    $sql = "SELECT tytul FROM Products WHERE tytul=$tytul";
-//                    var_dump($tytul);
-//                    $result = $connection->query($sql);
-//                    $row = $result->fetch_assoc();
-//
-//                    echo "<tr>";
-//                    echo "<td>" . $value->getPlatforma() . "</td>";
-//                     echo "<tr>";
-//                    echo "xxxxx";
-
-//                    echo "<td><a href='oneuser.php?id=" . $value->getUserId() . "'>".$row['username']."</a></td>";
-//                    echo "<td>" . $row['email'] . "</td>";
-//                    echo "<td>" . $value->getCreationDate() . "</td>";
-//                    echo "<td><a href='onetweet.php?id=" . $value->getId() . "'>Zobacz</a></td>";
-//                    echo "</tr>";
-//
-//                    echo "<tr>";
-//                    echo "<td colspan='4'>";
-//                    echo "<form method='POST' action='addcomment.php'><textarea name='komentarz'>" .
-//                    "</textarea>"
-//                    . "     <input type='hidden' name='tweetID' value='" . $value->getId() . "'/>";
-//                    echo "</td><td><input type='submit' value='Dodaj'></td></form>";
-//                    echo "</tr>";
-                
-   
-        
-       
         ?>
             </table>
           
