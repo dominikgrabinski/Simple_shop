@@ -130,9 +130,9 @@ class Products {
     }
     
     //szukanie po tytule, po konsoli
-    public function loadProductByTitle(mysqli $connection, $id) {
+    public static function loadProductByTitle(mysqli $connection, $tytul) {
         
-        $q = "SELECT * FROM Products WHERE tytul = '$id'";
+        $q = "SELECT * FROM Products WHERE tytul = '$tytul'";
         $result = $connection->query($q);
         
         if ($result == TRUE && $result->num_rows != 0) {
@@ -155,7 +155,7 @@ class Products {
                 return $oProduct;
 
         }
-        echo "dupa";
+        echo "Brak gry w naszym sklepie";
         return NULL;    
     }
     
@@ -184,7 +184,7 @@ class Products {
     
 }
 
-//$oPro = new Products();
+$oPro = new Products();
 //$oPro->setCena(199.99);
 //$oPro->setDataPremiery('2012-12-30');
 //$oPro->setEdycja('pudełkowa');
@@ -196,6 +196,9 @@ class Products {
 //$oPro->setPromocja('-25%');
 //$oPro->setTytul('Tomb Raider');
 //$oPro->setWydawca('chyba EA');
+//
+//$oPro->getId(1);
+//var_dump($oPro);
 
 //$oProdu
 //var_dump($oPro->loadProductByTitle($connection, 'Tomb Raider'));

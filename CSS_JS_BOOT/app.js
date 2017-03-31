@@ -35,8 +35,8 @@ $(".close").click(function(){
   
   $( function() {
     var availableTags = [
-      "ActionScript",
-      "AppleScript",
+      "Diablo",
+      "Fifa17",
       "Asp",
       "BASIC",
       "C",

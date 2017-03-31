@@ -65,7 +65,7 @@
         
       </ul>
         
-      <form class="navbar-form navbar-left">
+        <form class="navbar-form navbar-left" action="search.php">
         <div class="form-group ui-widget" style="height: 35px; border-bottom:1px solid #3498DF " >
             <input id="tags" type="text" name="keywords" placeholder="Nazwa gry..." 
                 class="ui-autocomplete-input" autocomplete="off"style="height: 35px;" >
@@ -73,8 +73,6 @@
 <!--sciagniete z neta z powyzsze 7 linijek i nie tylko :)-->
 
         </div>
-          
-<!--          <ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content ui-corner-all" id="ui-id-1" tabindex="0" style="display: block; top: 54px; left: 295px; width: 262px;"><li class="ui-autocomplete-category">Produkty</li><li class="ui-menu-item" role="presentation"><a id="ui-id-134" class="ui-corner-all" tabindex="-1">Guardians of the Galaxy Metals <strong>Di</strong>ecast Mini Figure Potted Groot 10 cm Gadżety (Gadżety)</a></li><li class="ui-menu-item" role="presentation"><a id="ui-id-135" class="ui-corner-all" tabindex="-1">Dragonball Z Super Master Stars Piece Figure Vegeta Manga <strong>Di</strong>mensions 24 cm Gadżety (Gadżety)</a></li><li class="ui-menu-item" role="presentation"><a id="ui-id-136" class="ui-corner-all" tabindex="-1">Dragonball Z Super Master Stars Piece Figure Trunks Manga <strong>Di</strong>mensions 24 cm Gadżety (Gadżety)</a></li><li class="ui-menu-item" role="presentation"><a id="ui-id-137" class="ui-corner-all" tabindex="-1"><strong>Di</strong>RT 4 PC (PC)</a></li><li class="ui-menu-item" role="presentation"><a id="ui-id-138" class="ui-corner-all" tabindex="-1"><strong>Di</strong>RT 4 PS4 (PlayStation 4)</a></li><li class="ui-menu-item" role="presentation"><a id="ui-id-139" class="ui-corner-all" tabindex="-1">Stellaris: Utopia (PC/MAC/LX) PL <strong>DI</strong>GITAL Klucze (Klucze do gier)</a></li><li class="ui-menu-item" role="presentation"><a id="ui-id-140" class="ui-corner-all" tabindex="-1">BeatCop (PC/MAC/LX) PL <strong>DI</strong>GITAL + BONUSY! Klucze (Klucze do gier)</a></li><li class="ui-menu-item" role="presentation"><a id="ui-id-141" class="ui-corner-all" tabindex="-1">Śródziemie: Cień Wojny - Złota Edycja (PC) PL <strong>DI</strong>GITAL + BONUS! Klucze (Klucze do gier)</a></li><li class="ui-menu-item" role="presentation"><a id="ui-id-142" class="ui-corner-all" tabindex="-1">Impact Winter (PC) PL <strong>DI</strong>GITAL + BONUS! Klucze (Klucze do gier)</a></li><li class="ui-menu-item" role="presentation"><a id="ui-id-143" class="ui-corner-all" tabindex="-1"><strong>Di</strong>RT 4 XONE (Xbox One)</a></li><li class="ui-autocomplete-more ui-menu-item" role="presentation"><a href="/search/?keywords=di" id="ui-id-144" class="ui-corner-all" tabindex="-1"><strong>Zobacz więcej (121)...<strong></strong></strong></a></li></ul>-->
         <button style="border-bottom: 2px solid #3498DF; height: 35px;" type="submit" class="btn btn-default">Szukaj
         </button>
    
