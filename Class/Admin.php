@@ -9,6 +9,26 @@ class Admin {
     private $password;
     private $salt;
     
+    public function __construct() {
+        $this->id = -1;
+        $this->name = "";
+        $this->email = "";
+        $this->password = "";
+        $this->salt = "";
+    }
+    
+    public function setId($newId) {
+        return $this->id = $newId;
+    }
+    
+    public function getId() {
+        $this->id = $id;
+    }
+        
+        
+        
+    
+    
     
 }
 
