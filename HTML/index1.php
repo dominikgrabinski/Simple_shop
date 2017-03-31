@@ -175,13 +175,13 @@
 
 <?php
 if(isset($_SESSION['email'])){ ?>
-        <script>
-            $('#login_button').click(function(){
-    $(location).attr('href', 'http://localhost/kurs/sklep/Simple_shop/HTML/account.php');
-});
+    <script>
+        $('#login_button').click(function(){
+        $(location).attr('href', 'http://localhost/kurs/sklep/Simple_shop/HTML/account.php');
+        });
     </script>
 <?php }else{?>
-<script>
+    <script>
     $('#login_button').click(function(){
     $('#logowanie_box').fadeIn('slow');
 });
