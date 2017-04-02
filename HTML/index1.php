@@ -11,7 +11,7 @@
         <script src="../CSS_JS_BOOT/jquery.min.js" type="text/javascript">  </script>
     </head>
     <body >
-            
+<div id="content">  
 <nav class="navbar">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -193,7 +193,7 @@
                     <img src="../img/4.jpg" alt="3">
                 </div>
                 
-            </div>
+            </div><!--
             <a span="left carousel-control" href="#karuzela" role="button" data-slide="prev">
                 <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
                 <span class="sr-only">Poprzedni</span>
@@ -202,6 +202,7 @@
                 <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                 <span class="sr-only">Następny</span>
             </a>
+                  -->
         </div>
 <?php
 if(isset($_SESSION['email'])){ ?>
@@ -221,5 +222,6 @@ if(isset($_SESSION['email'])){ ?>
         <script src="../CSS_JS_BOOT/app.js" type="text/javascript">  </script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
+    </div>
     </body>
 </html>
