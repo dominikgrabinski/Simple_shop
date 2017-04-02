@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php session_start();?>
-<html class="index1">
+<html>
     <head>
         <title>Sklep z grami</title>
         <meta charset="UTF-8">
@@ -162,7 +162,7 @@
                         <div class="text-center">
                             <input class="btn btn-primary" type="submit" name="submit" value="Załóż konto">
                             <input type="hidden" id="Register_type" name="Register[type]" value="1"><input type="hidden" id="Register__token" name="Register[_token]" value="35fccfd9cd96d879ef3976151c6b96221f974381">
-                        </div>
+                       </div>
                     </div>
                 </form>
                 
@@ -171,7 +171,38 @@
                 <div class="text-justify" style="font-size: 0.9em; line-height: 1.2em;">Masz już konto? <a href="#" data-toggle="modal" data-target="#login" data-dismiss="modal">Zaloguj się</a>.</div>
             </div>
         </div>
-
+        
+        <div id="karuzela" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#karuzela" data-slide-to="0" class="active"></li>
+                <li data-target="#karuzela" data-slide-to="1"></li>
+                <li data-target="#karuzela" data-slide-to="2"></li>
+                <li data-target="#karuzela" data-slide-to="3"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <img src="../img/1.jpg" alt="1">
+                </div>
+                <div class="item">
+                    <img src="../img/2.jpg" alt="2">
+                </div>
+                <div class="item">
+                    <img src="../img/3.jpg" alt="3">
+                </div>
+                <div class="item">
+                    <img src="../img/4.jpg" alt="3">
+                </div>
+                
+            </div>
+            <a span="left carousel-control" href="#karuzela" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Poprzedni</span>
+            </a>
+            <a span="right carousel-control" href="#karuzela" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Następny</span>
+            </a>
+        </div>
 <?php
 if(isset($_SESSION['email'])){ ?>
     <script>
