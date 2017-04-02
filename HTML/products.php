@@ -56,7 +56,7 @@ require '../Class/Products.php';?>
           
       }
       else {
-            echo "<table>";
+            echo "<table class='thmain'>";
             echo "<tr>";
             echo "<th>Tytuł</th>";
             echo "<th>Platforma</th>";
@@ -77,7 +77,7 @@ require '../Class/Products.php';?>
                         echo "<td>".$value->getPlatforma()."</td>";
                         echo "<td>".$value->getGatunek()."</td>";
                         echo "<td>".$value->getOpis()."</td>";
-                        echo "<td>".$value->getCena()."</td>";
+                        echo "<td><a href='../Sites/basket.php?add=".$value->getId()."'>".$value->getCena()."</a></td>";
                         echo "<td>".$value->getKategoriaWiekowa()."</td>";
                         echo "<td>".$value->getWydawca()."</td>";
                         echo "<td>".$value->getJezyk()."</td>";

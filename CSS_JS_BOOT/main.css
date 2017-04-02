@@ -72,5 +72,9 @@
 	background-position: top;
 }
 
-
-
+.thmain{
+    text-align: center;
+}
+.thmain th {
+    text-align: center;
+}

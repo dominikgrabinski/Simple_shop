@@ -143,6 +143,7 @@ class Products {
                 
                 $oProduct = new Products();
                 $oProduct->cena = $row['cena'];
+                $oProduct->id = $row['id'];
                 $oProduct->dataPremiery = $row['data_premiery'];
                 $oProduct->edycja = $row['edycja'];
                 $oProduct->gatunek = $row['gatunek'];
@@ -202,6 +203,7 @@ class Products {
                 $oProduct->promocja = $row['promocja'];
                 $oProduct->tytul = $row['tytul'];
                 $oProduct->wydawca = $row['wydawca'];
+                $oProduct->id = $row['id'];
                 $arr[] = $oProduct;
                 }
                 return $arr;
