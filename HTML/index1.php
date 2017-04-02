@@ -33,7 +33,7 @@
              aria-haspopup="true" aria-expanded="false">PlayStation 3 <span class="caret"></span>
           </a>
           <ul class="dropdown-menu">
-            <li><a href="ps3.php">Gry</a></li>
+            <li><a href="products.php?platform=ps3">Gry</a></li>
             <li><a href="#">Kody PSN</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="#">Bestsellery</a></li>
@@ -48,7 +48,7 @@
              aria-haspopup="true" aria-expanded="false">PlayStation 4 <span class="caret"></span>
           </a>
           <ul class="dropdown-menu">
-            <li><a href="ps4.php">Gry</a></li>
+              <li><a href="products.php?platform=ps4">Gry</a></li>
             <li><a href="#">Kody PSN</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="#">Bestsellery</a></li>

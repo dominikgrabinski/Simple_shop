@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+1<!DOCTYPE html>
 <?php 
 require_once '../SRC/config.php';
 require_once('../Class/Products.php');
@@ -40,7 +40,7 @@ session_start();?>
   </div><!-- /.container-fluid -->
 </nav>
       
-        <table class="allTweet allTweetMain">
+        <table>
       <?php
       
       $tytul = $_GET['keywords'];
@@ -61,17 +61,17 @@ session_start();?>
             echo "<th>Edycja</th>";
             echo "</tr>";
          
-                        echo "<tr><td colspan=2>".$searchGames->getTytul()."</td>";
-                        echo "<td colspan=2>".$searchGames->getPlatforma()."</td>";
-                        echo "<td colspan=2>".$searchGames->getGatunek()."</td>";
-                        echo "<td colspan=2>".$searchGames->getOpis()."</td>";
-                        echo "<td colspan=2>".$searchGames->getCena()."</td>";
-                        echo "<td colspan=2>".$searchGames->getKategoriaWiekowa()."</td>";
-                        echo "<td colspan=2>".$searchGames->getWydawca()."</td>";
-                        echo "<td colspan=2>".$searchGames->getJezyk()."</td>";
-                        echo "<td colspan=2>".$searchGames->getPromocja()."</td>";
-                        echo "<td colspan=2>".$searchGames->getEdycja()."</td>";
-                        echo "<td colspan=2>" .$searchGames->getGatunek()."</td></tr>";
+                        echo "<tr><td colspan=1>".$searchGames->getTytul()."</td>";
+                        echo "<td colspan=1>".$searchGames->getPlatforma()."</td>";
+                        echo "<td colspan=1>".$searchGames->getGatunek()."</td>";
+                        echo "<td colspan=1>".$searchGames->getOpis()."</td>";
+                        echo "<td colspan=1>".$searchGames->getCena()."</td>";
+                        echo "<td colspan=1>".$searchGames->getKategoriaWiekowa()."</td>";
+                        echo "<td colspan=1>".$searchGames->getWydawca()."</td>";
+                        echo "<td colspan=1>".$searchGames->getJezyk()."</td>";
+                        echo "<td colspan=1>".$searchGames->getPromocja()."</td>";
+                        echo "<td colspan=1>".$searchGames->getEdycja()."</td>";
+                        echo "<td colspan=1>" .$searchGames->getGatunek()."</td></tr>";
         ?>
             </table>
           

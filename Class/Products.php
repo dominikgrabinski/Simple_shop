@@ -134,7 +134,7 @@ class Products {
     //szukanie po tytule, po konsoli
     public static function loadProductByTitle(mysqli $connection, $tytul) {
         
-        $q = "SELECT * FROM Products WHERE tytul = '$tytul'";
+        $q = "SELECT * FROM Products WHERE tytul = '$tytul' LIMIT 1";
         $result = $connection->query($q);
         
         if ($result == TRUE && $result->num_rows != 0) {
@@ -182,11 +182,38 @@ class Products {
         //echo "NIE !!";
         return FALSE;
     }
+    public static function loadProductsByPlatform(mysqli $connection, $platforma){
+        $sql="SELECT * From Products Where platforma='$platforma'";
+        $result = $connection->query($sql);
+                
+        if ($result == TRUE && $result->num_rows != 0) {
+            
+                $arr=[];
+                while ($row = $result->fetch_assoc()){
+                $oProduct = new Products();
+                $oProduct->cena = $row['cena'];
+                $oProduct->dataPremiery = $row['data_premiery'];
+                $oProduct->edycja = $row['edycja'];
+                $oProduct->gatunek = $row['gatunek'];
+                $oProduct->jezyk = $row['jezyk'];
+                $oProduct->kategoriaWiekowa = $row['kategoria_wiekowa'];
+                $oProduct->opis = $row['opis'];
+                $oProduct->platforma = $row['platforma'];
+                $oProduct->promocja = $row['promocja'];
+                $oProduct->tytul = $row['tytul'];
+                $oProduct->wydawca = $row['wydawca'];
+                $arr[] = $oProduct;
+                }
+                return $arr;
+
+        }
+        return NULL;    
+    }
     
     
 }
 
-$oPro = new Products();
+//$oPro = new Products();
 //$oPro->setCena(199.99);
 //$oPro->setDataPremiery('2012-12-30');
 //$oPro->setEdycja('pudełkowa');

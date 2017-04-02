@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<?php session_start();?>
+<?php session_start();
+require '../SRC/config.php';
+require '../Class/Products.php';?>
 <html>
     <head>
         <title>Sklep z grami</title>
@@ -44,54 +46,49 @@
         
        
      
-        <div id="accordion">
-  <h3>Section 1</h3>
-  <div>
-    <p>
-    Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
-    ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
-    amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
-    odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
-    </p>
-  </div>
-  <h3>Section 2</h3>
-  <div>
-    <p>
-    Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
-    purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
-    velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
-    suscipit faucibus urna.
-    </p>
-  </div>
-  <h3>Section 3</h3>
-  <div>
-    <p>
-    Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
-    Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
-    ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
-    lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
-    </p>
-    <ul>
-      <li>List item one</li>
-      <li>List item two</li>
-      <li>List item three</li>
-    </ul>
-  </div>
-  <h3>Section 4</h3>
-  <div>
-    <p>
-    Cras dictum. Pellentesque habitant morbi tristique senectus et netus
-    et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
-    faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
-    mauris vel est.
-    </p>
-    <p>
-    Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
-    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-    inceptos himenaeos.
-    </p>
-  </div>
-</div>
+      <?php
+      
+      $platforma = $_GET['platform'];
+      $searchGames = Products :: loadProductsByPlatform($connection,$platforma);
+     
+      if($searchGames == NULL){
+          echo 'brak gier w sklepie'; 
+          
+      }
+      else {
+            echo "<table>";
+            echo "<tr>";
+            echo "<th>Tytuł</th>";
+            echo "<th>Platforma</th>";
+            echo "<th>Gatunek</th>";
+            echo "<th>Opis</th>";
+            echo "<th>Cena</th>";
+            echo "<th>Kategoria wiekowa</th>";
+            echo "<th>Wydawca</th>";
+            echo "<th>Język w grze</th>";
+            echo "<th>Data premiery</th>";
+            echo "<th>Promocja</th>";
+            echo "<th>Edycja</th>";
+            echo "</tr>";
+            
+            foreach ($searchGames as $value){
+         
+                        echo "<tr><td >".$value->getTytul()."</td>";
+                        echo "<td>".$value->getPlatforma()."</td>";
+                        echo "<td>".$value->getGatunek()."</td>";
+                        echo "<td>".$value->getOpis()."</td>";
+                        echo "<td>".$value->getCena()."</td>";
+                        echo "<td>".$value->getKategoriaWiekowa()."</td>";
+                        echo "<td>".$value->getWydawca()."</td>";
+                        echo "<td>".$value->getJezyk()."</td>";
+                        echo "<td>".$value->getPromocja()."</td>";
+                        echo "<td>".$value->getEdycja()."</td>";
+                        echo "<td>" .$value->getGatunek()."</td></tr>";
+            
+                      
+            }
+            echo "</table>";
+        }?>
 
         
         
