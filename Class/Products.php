@@ -19,7 +19,7 @@ class Products {
     private $promocja;
     private $edycja;
     
-    public function __construct() {
+    private function __construct() {
         $this->id = -1;
         $this->tytul = "";
         $this->platforma = "";

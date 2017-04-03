@@ -73,7 +73,7 @@ require '../Class/Products.php';?>
             
             foreach ($searchGames as $value){
          
-                        echo "<tr><td >".$value->getTytul()."</td>";
+                        echo "<tr><td ><a href='../Sites/oneproduct.php?id=".$value->getId()."'>".$value->getTytul()."</a></td>";
                         echo "<td>".$value->getPlatforma()."</td>";
                         echo "<td>".$value->getGatunek()."</td>";
                         echo "<td>".$value->getOpis()."</td>";
