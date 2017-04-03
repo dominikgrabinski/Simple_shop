@@ -15,9 +15,7 @@ require '../Class/Images.php';
         <link rel="stylesheet" href="../CSS_JS_BOOT/main.css" type="text/css">
     </head>
     <body>
-  
-  
-        
+ 
         <button type="button" class="btn btn-default" onclick="history.back();" style="font-weight: normal;">
         Powrót do sklepu        
         </button>
@@ -26,18 +24,17 @@ require '../Class/Images.php';
         <script src="../CSS_JS_BOOT/jquery.js" type="text/javascript">  </script>
         <script src="../CSS_JS_BOOT/bootstrap.min.js" type="text/javascript">  </script>
         <script src="../CSS_JS_BOOT/app.js" type="text/javascript">  </script>
-                      <?php
-              $product_id = $_GET['id'];
+              <?php
+                $product_id = $_GET['id'];
                 $images = Images::loadAllImagesById($connection,$product_id);
                 if($images == NULL){
                     echo "Brak obrazkow cioto";                    
                 }
                 else {
                     foreach($images as $image){
-
-
                     }
-                }?>
+                }
+              ?>
       <div class="row">
           <div class="col-md-6">
               <div id="karuzela" class="carousel slide" data-ride="carousel">
@@ -69,7 +66,6 @@ require '../Class/Images.php';
                         echo ('</div>');
                         $number++;
                     }
-                
                 ?>
                 
             </div>
@@ -89,7 +85,6 @@ require '../Class/Images.php';
           <div class="col-md-6">
                tu dane
           </div>
-          
       </div>
 <?php 
 ?>
