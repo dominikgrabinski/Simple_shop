@@ -73,14 +73,14 @@ require '../Class/Images.php';
                 ?>
                 
             </div>
-<!--            <a span="left carousel-control" href="#karuzela" role="button" data-slide="prev">
+            <a span="left carousel-control" href="#karuzela" role="button" data-slide="prev">
                 <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
                 <span class="sr-only">Poprzedni</span>
             </a>
             <a span="right carousel-control" href="#karuzela" role="button" data-slide="next">
                 <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                 <span class="sr-only">Następny</span>
-            </a>-->
+            </a>
                  
         </div>
 
