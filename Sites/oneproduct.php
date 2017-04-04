@@ -83,7 +83,10 @@ require '../Class/Images.php';
              
           </div>
           <div class="col-md-6">
-               tu dane
+               <?php
+               $produkt = Products::loadProductsById($connection, $product_id);
+               echo $produkt->getTytul();        
+                ?>
           </div>
       </div>
 <?php 

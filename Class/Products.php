@@ -212,6 +212,35 @@ class Products {
         return NULL;    
     }
     
+    public static function loadProductsById(mysqli $connection,$id){
+        $sql="SELECT * From Products Where id='$id'";
+                $result = $connection->query($sql);
+
+                if ($result == TRUE && $result->num_rows != 0) {
+            
+                $row = $result->fetch_assoc();
+                
+                $oProduct = new Products();
+                $oProduct->cena = $row['cena'];
+                $oProduct->dataPremiery = $row['data_premiery'];
+                $oProduct->edycja = $row['edycja'];
+                $oProduct->gatunek = $row['gatunek'];
+                $oProduct->jezyk = $row['jezyk'];
+                $oProduct->kategoriaWiekowa = $row['kategoria_wiekowa'];
+                $oProduct->opis = $row['opis'];
+                $oProduct->platforma = $row['platforma'];
+                $oProduct->promocja = $row['promocja'];
+                $oProduct->tytul = $row['tytul'];
+                $oProduct->wydawca = $row['wydawca'];
+                $oProduct->id = $row['id'];
+                return $oProduct;
+
+        }
+        else{
+            return NULL;
+        }
+    }
+    
     
 }
 
