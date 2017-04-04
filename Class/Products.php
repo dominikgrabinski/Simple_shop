@@ -6,20 +6,20 @@ require '../SRC/config.php';
 
 class Products {
     
-    private $id;
-    private $tytul;
-    private $platforma;
-    private $gatunek;
-    private $opis;
-    private $cena;
-    private $kategoriaWiekowa;
-    private $wydawca;
-    private $jezyk;
-    private $dataPremiery;
-    private $promocja;
-    private $edycja;
+    protected $id;
+    protected $tytul;
+    protected $platforma;
+    protected $gatunek;
+    protected $opis;
+    protected $cena;
+    protected $kategoriaWiekowa;
+    protected $wydawca;
+    protected $jezyk;
+    protected $dataPremiery;
+    protected $promocja;
+    protected $edycja;
     
-    private function __construct() {
+    protected function __construct() {
         $this->id = -1;
         $this->tytul = "";
         $this->platforma = "";
