@@ -30,12 +30,15 @@ class BasketItem extends Products {
                 $oProduct->promocja = $row['promocja'];
                 $oProduct->tytul = $row['tytul'];
                 $oProduct->wydawca = $row['wydawca'];
-                $this->itemCount = $itemCount;
+                $oProduct->itemCount = $itemCount;
                 return $oProduct;
 
         }
         echo "Brak gry w naszym sklepie";
         return NULL;    
+    }
+    public function addItemCount(){
+        $this->itemCount++;
     }
 }
 
