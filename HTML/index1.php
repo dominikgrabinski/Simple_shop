@@ -61,7 +61,7 @@
         
       </ul>
         
-        <form class="navbar-form navbar-left" action="search.php">
+        <form class="navbar-form navbar-left" action="../Sites/oneproduct.php">
             <div class="form-group ui-widget" style="height: 35px; border-bottom:1px solid #3498DF " >
                 <input id="tags" type="text" name="keywords" placeholder="Nazwa gry..." 
                     class="ui-autocomplete-input" autocomplete="off"style="height: 35px;" >
@@ -74,7 +74,7 @@
         <li> <a href="#" id="login_button"> Moje konto</a></li>
         <li> <a href="../Sites/basket.php" data-toggle="modal"> Mój koszyk</a></li>
         <li> <a href="account.php"> <?php if(!empty($_SESSION['email'])) echo "Witaj:". $_SESSION['email']; ?></a></li>
-        <li> <a href="logout.php"> <?php if(!empty($_SESSION['email'])) echo "wyloguj"; ?></a></li>
+        <li> <a href="logout.php"> <?php if(!empty($_SESSION['email'])) echo "Wyloguj"; ?></a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div>

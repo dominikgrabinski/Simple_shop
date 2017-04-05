@@ -154,7 +154,7 @@ class Products {
                 $oProduct->promocja = $row['promocja'];
                 $oProduct->tytul = $row['tytul'];
                 $oProduct->wydawca = $row['wydawca'];
-                echo "ok";
+        
                 return $oProduct;
 
         }
