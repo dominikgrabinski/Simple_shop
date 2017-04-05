@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <?php
+session_start();
 require '../SRC/config.php';
 require '../Class/Products.php';
 require '../Class/Images.php';
