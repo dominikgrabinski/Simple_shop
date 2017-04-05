@@ -1,6 +1,6 @@
 <?php
 
-require 'BasketItem.php';
+//require 'BasketItem.php';
 class Basket {
     
     private $items;

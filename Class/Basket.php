@@ -10,7 +10,7 @@ class Basket {
     }
     
     public function addItem(BasketItem $item){
-        if($this->isItemExist($item))
+        if($this->isItemExist($item)) 
             throw new Exception("This item EXIST", 1);
         
         $this->items[] = $item;

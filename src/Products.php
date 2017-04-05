@@ -2,7 +2,7 @@
 
 //wyszukiwanie wszystkich gier
 
-require '../SRC/config.php';
+//require '../SRC/config.php';
 
 class Products {
     
@@ -19,7 +19,7 @@ class Products {
     protected $promocja;
     protected $edycja;
     
-    protected function __construct() {
+    public function __construct() {
         $this->id = -1;
         $this->tytul = "";
         $this->platforma = "";

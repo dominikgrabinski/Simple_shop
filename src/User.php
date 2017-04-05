@@ -1,6 +1,6 @@
 <?php
 
-require '../SRC/config.php';
+//require '../SRC/config.php';
 
 class User {
     private $id;

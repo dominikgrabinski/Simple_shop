@@ -1,3 +1,4 @@
 /nbproject/
 vendor/
 SRC/config.php
+phpunit.xml
