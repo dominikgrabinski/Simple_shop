@@ -124,7 +124,7 @@ require '../Class/Images.php';
                <?php
                $produkt = Products::loadProductsById($connection, $product_id);
                echo $produkt->getTytul()."<br>";        
-               echo "<td><a href='../Sites/basket.php?add=".$product_id."'>".$produkt->getCena()."</a></td>";
+               echo "<td><a href='../Sites/basket.php?add=".$product_id."'>".$produkt->getCena()."</a></td><br>";
                echo $produkt->getDataPremiery()."<br>";     
                 ?>
           </div>
