@@ -172,7 +172,7 @@
             </div>
         </div>
         
-        <div id="karuzela" class="carousel slide" data-ride="carousel">
+<!--        <div id="karuzela" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#karuzela" data-slide-to="0" class="active"></li>
                 <li data-target="#karuzela" data-slide-to="1"></li>
@@ -193,7 +193,7 @@
                     <img src="../img/4.jpg" alt="3">
                 </div>
                 
-            </div><!--
+            </div>
             <a span="left carousel-control" href="#karuzela" role="button" data-slide="prev">
                 <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
                 <span class="sr-only">Poprzedni</span>
@@ -202,8 +202,8 @@
                 <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                 <span class="sr-only">Następny</span>
             </a>
-                  -->
-        </div>
+                  
+        </div>-->
 <?php
 if(isset($_SESSION['email'])){ ?>
     <script>
@@ -214,7 +214,7 @@ if(isset($_SESSION['email'])){ ?>
 <?php }else{?>
     <script>
     $('#login_button').click(function(){
-    $('#logowanie_box').fadeIn('slow');
+    $('#_box').fadeIn('slow');
 });
     </script>
     <?php }?>

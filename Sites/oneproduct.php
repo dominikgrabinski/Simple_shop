@@ -85,7 +85,8 @@ require '../Class/Images.php';
           <div class="col-md-6">
                <?php
                $produkt = Products::loadProductsById($connection, $product_id);
-               echo $produkt->getTytul();        
+               echo $produkt->getTytul()."<br>";        
+               echo $produkt->getCena(); 
                 ?>
           </div>
       </div>

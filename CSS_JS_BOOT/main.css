@@ -1,6 +1,6 @@
 .modal-content{
     display: none;
-    position: relative;
+    position: fixed;
     background-color: #fff;
     border: 1px solid #999;
     border: 1px solid rgba(0,0,0,0.2);
