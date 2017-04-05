@@ -11,9 +11,10 @@
         <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
         <script src="../CSS_JS_BOOT/jquery.min.js" type="text/javascript">  </script>
     </head>
-    <body >
+    <body>
+        <div class="glowna">   
         
-<nav class="navbar">
+<nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" 
@@ -79,7 +80,10 @@
     </div><!-- /.navbar-collapse -->
   </div>
 </nav>
-        <div class="głowna">
+        
+     
+            
+           
  
         <div class="modal-content 
              col-md-6 col-md-offset-3" id="logowanie_box">
