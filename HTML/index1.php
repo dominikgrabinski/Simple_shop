@@ -12,7 +12,7 @@
         <script src="../CSS_JS_BOOT/jquery.min.js" type="text/javascript">  </script>
     </head>
     <body >
- 
+        
 <nav class="navbar">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -79,6 +79,7 @@
     </div><!-- /.navbar-collapse -->
   </div>
 </nav>
+        <div class="głowna">
  
         <div class="modal-content 
              col-md-6 col-md-offset-3" id="logowanie_box">
@@ -199,7 +200,8 @@
                 <span class="sr-only">Następny</span>
             </a>
                   
--->     
+-->   
+    </div>
 <?php
 if(isset($_SESSION['email'])){ ?>
     <script>
