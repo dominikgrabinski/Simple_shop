@@ -121,12 +121,22 @@ require '../Class/Images.php';
              
           </div>
           <div class="col-md-6">
+              <div class="col-md-3">
                <?php
                $produkt = Products::loadProductsById($connection, $product_id);
                echo $produkt->getTytul()."<br>";        
                echo "<td><a href='../Sites/basket.php?add=".$product_id."'>".$produkt->getCena()."</a></td><br>";
                echo $produkt->getDataPremiery()."<br>";     
                 ?>
+              </div>
+               <div class="col-md-9">
+               <?php
+               $produkt = Products::loadProductsById($connection, $product_id);
+               echo $produkt->getTytul()."<br>";        
+               echo "<td><a href='../Sites/basket.php?add=".$product_id."'>".$produkt->getCena()."</a></td>";
+               echo $produkt->getDataPremiery()."<br>";     
+                ?>
+              </div>
           </div>
       </div>
 <?php 
