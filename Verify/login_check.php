@@ -39,19 +39,19 @@ session_start();
       else
       {
         echo "Błędne dane logowania spróbuj jesze raz";
-        header( "refresh:2;url=../HTML/index1.html" );
+        header( "refresh:2;url=../HTML/index1.php" );
       }
     }
     else
     {
     echo "Podaj hasło!";
-//    header( "refresh:3;url=loginhtml.php" );
+    header( "refresh:2;url=../HTML/index1.php" );
     }
   }
   else
   {
     echo "Podaj email!";
-//    header( "refresh:3;url=loginhtml.php" );
+    header( "refresh:2;url=../HTML/index1.php" );
   }
 
   ?>
