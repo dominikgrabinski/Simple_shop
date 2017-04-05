@@ -122,10 +122,7 @@ require '../Class/Images.php';
           </div>
           <div class="col-md-6">
               <div class="col-md-3">
-<<<<<<< HEAD
-=======
-            
->>>>>>> 84ec970203a28b739de0b1ef2c5e33c6d73c66cc
+
               </div>
                <div class="col-md-9">
                <?php
