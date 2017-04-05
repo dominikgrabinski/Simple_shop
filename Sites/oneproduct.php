@@ -121,17 +121,45 @@ require '../Class/Images.php';
              
           </div>
           <div class="col-md-6">
+
+                  <?php
+                    $produkt = Products::loadProductsById($connection, $product_id);
+                  ?>
               <div class="col-md-3">
+  
+                     Tytuł:              <br> 
+                     Cena:               <br>
+                     Platforma:          <br>
+                     Gatunek:            <br>
+                     Kategoria wiekowa:  <br>
+                     Wydawca:            <br>
+                     Język:              <br>
+                     Data Premiery:      <br>
+                     Promocja:           <br>
+                     Edycja:             <br>
+                     Opis:               <br>
 
               </div>
                <div class="col-md-9">
+
                <?php
-               $produkt = Products::loadProductsById($connection, $product_id);
-               echo $produkt->getTytul()."<br>";        
-               echo "<td><a href='../Sites/basket.php?add=".$product_id."'>".$produkt->getCena()."</a></td>";
-               echo $produkt->getDataPremiery()."<br>";     
-                ?>
+               
+               echo $produkt->getTytul()."<br>"; 
+               echo "<a href='../Sites/basket.php?add=".$product_id."'>".$produkt->getCena()."</a><br>";
+               echo $produkt->getPlatforma()."<br>";
+               echo $produkt->getGatunek()."<br>";
+               echo $produkt->getKategoriaWiekowa()."<br>";
+               echo $produkt->getWydawca()."<br>";
+               echo $produkt->getJezyk()."<br>";
+               echo $produkt->getDataPremiery()."<br>";
+               echo $produkt->getPromocja()."<br>";
+               echo $produkt->getEdycja()."<br>";
+               echo $produkt->getOpis()."<br>";
+               
+               ?>
+              
               </div>
+   
           </div>
       </div>
 <?php 
