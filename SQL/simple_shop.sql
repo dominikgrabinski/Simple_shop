@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
+-- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Czas generowania: 31 Mar 2017, 13:31
+-- Czas generowania: 05 Kwi 2017, 11:20
 -- Wersja serwera: 5.7.16
 -- Wersja PHP: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -88,8 +90,31 @@ CREATE TABLE `Products` (
 --
 
 INSERT INTO `Products` (`id`, `tytul`, `platforma`, `gatunek`, `opis`, `cena`, `kategoria_wiekowa`, `wydawca`, `jezyk`, `data_premiery`, `promocja`, `edycja`) VALUES
-(1, 'Diablo', 'PS4', 'Akcja', 'Wydanie Ultimate Evil Edition zawiera pełną wersję gry Diablo III oraz rozszerzenie Reaper of Souls. Szykuj się – nadciąga coś naprawdę straszliwego. \r\n\r\nWezwij swoich sojuszników – Graj w pojedynkę lub skrzyknij znajomych i stwórz drużynę złożoną z nawet czterech bohaterów — grających lokalnie na jednym ekranie albo w sieci, za pośrednictwem usługi PlayStation Network lub Xbox Live.\r\nZostań legendarnym bohaterem – Wciel się w jednego z ostatnich obrońców ludzkości — krzyżowca, barbarzyńcę, szamana, mnicha, łowczynię demonów lub czarownicę — i rozwijaj swoją postać, zdobywając legendarne skarby oraz opanowując nowe, niszczycielskie moce i zdolności.\r\nPrzerwij demoniczne oblężenie – Siej spustoszenie w szeregach sług zła i poznaj fabułę Diablo III na przestrzeni wszystkich pięciu aktów; przemierzaj otwarty świat w trybie przygodowym lub poluj na pradawne demony i potwory, które czają się w mrocznych ostępach krain śmiertelników.', '119.99', '16+', 'Blizzard Enterteinment', 'Polski', '2012-05-12', 'tak', 'zwykła'),
+(1, 'Diablo', 'PS4', 'Akcja', 'Wydanie Ultimate Evil Edition zawiera pełną wersję gry Diablo III oraz rozszerzenie Reaper of Souls. Szykuj się – nadciąga coś naprawdę straszliwego. \r\n\r\nWezwij swoich sojuszników – Graj w pojedynkę lub skrzyknij znajomych i stwórz drużynę złożoną z nawet czterech bohaterów — grających lokalnie na jednym ekranie albo w sieci, za pośrednictwem usługi PlayStation Network lub Xbox Live.\r\nZostań legendarnym bohaterem – Wciel się w jednego z ostatnich obrońców ludzkości — krzyżowca, barbarzyńcę, szamana, mnicha, łowczynię demonów lub czarownicę — i rozwijaj swoją postać, zdobywając legendarne skarby oraz opanowując nowe, niszczycielskie moce i zdolności.\r\nPrzerwij demoniczne oblężenie – Siej spustoszenie w szeregach sług zła i poznaj fabułę Diablo III na przestrzeni wszystkich pięciu aktów; przemierzaj otwarty świat w trybie przygodowym lub poluj na pradawne demony i potwory, które czają się w mrocznych ostępach krain śmiertelników.sd', '119.99', '16+', 'Blizzard Enterteinment', 'Polski', '2012-05-12', 'tak', 'zwykła'),
 (2, 'Fifa17', 'Ps4', 'Sportowa', 'xxx', '169.99', '3+', 'Electronic Arts', 'Polski', '2016-10-16', 'Nie', 'zwykła');
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `Products_images`
+--
+
+CREATE TABLE `Products_images` (
+  `id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `image` varchar(63) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Zrzut danych tabeli `Products_images`
+--
+
+INSERT INTO `Products_images` (`id`, `product_id`, `image`) VALUES
+(1, 1, 'diablo/diablo1.jpeg'),
+(2, 1, 'diablo/diablo2.png'),
+(3, 1, 'diablo/diablo3.jpg'),
+(9, 2, 'fifa/fifa1.jpeg\r\n'),
+(11, 2, 'fifa/fifa2.jpg');
 
 -- --------------------------------------------------------
 
@@ -127,7 +152,7 @@ INSERT INTO `Users` (`id`, `name`, `email`, `password`, `salt`, `first_login_dat
 (9, '', 'zz', '4a60bf7d4bc1e485744cf7e8d0860524752fca1ce42331be7c439fd23043f151', '', '2017-03-29 19:32:50', '2017-03-29 19:32:50'),
 (12, '', 'tomek', 'a6bbc4b66450dd5910cbdf7f914792e63ba52418817765095952bfea7b751d70', '', '2017-03-29 19:35:05', '2017-03-29 19:35:05'),
 (13, '', 'dupa', '4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a', '4b062e70d8b471ab7a93e8d244b6fd03e3e0a165f1008ffb5ed51a0dbc5f3e43', '2017-03-29 20:14:50', '2017-03-29 20:33:44'),
-(14, '', 'xx', 'ab42081446e87db130555f711ae7d15373c81663a4b618aca776607ecb7b22e8', '37598cb65b7f8ff2588cafc363597d4f956a32dc2653fbc937cdea048750092d', '2017-03-29 20:35:02', '2017-03-31 12:32:18'),
+(14, '', 'xx', 'ab42081446e87db130555f711ae7d15373c81663a4b618aca776607ecb7b22e8', '37598cb65b7f8ff2588cafc363597d4f956a32dc2653fbc937cdea048750092d', '2017-03-29 20:35:02', '2017-04-02 21:23:40'),
 (15, '', 'dlugihujekdlugi1@wp.pl', 'f52105ff5c8333432eb3ffbb02f27fe05c0e2cee41a7fe5107c5d3f0e7ab0115', '7e3ddda87f1fde92d36f967734720f9edd3044483b17bb6abf1dbb7da4486d8c', '2017-03-29 20:49:47', '2017-03-29 20:50:08');
 
 -- --------------------------------------------------------
@@ -189,6 +214,13 @@ ALTER TABLE `Products`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `Products_images`
+--
+ALTER TABLE `Products_images`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `product_id` (`product_id`);
+
+--
 -- Indexes for table `Status`
 --
 ALTER TABLE `Status`
@@ -238,6 +270,11 @@ ALTER TABLE `Orders`
 ALTER TABLE `Products`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
+-- AUTO_INCREMENT dla tabeli `Products_images`
+--
+ALTER TABLE `Products_images`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+--
 -- AUTO_INCREMENT dla tabeli `Status`
 --
 ALTER TABLE `Status`
@@ -274,6 +311,7 @@ ALTER TABLE `Magazine`
 ALTER TABLE `Orders`
   ADD CONSTRAINT `Orders_ibfk_1` FOREIGN KEY (`User_id`) REFERENCES `Users` (`id`),
   ADD CONSTRAINT `Orders_ibfk_2` FOREIGN KEY (`Status_id`) REFERENCES `Status` (`id`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
