@@ -48,56 +48,29 @@ require '../Class/Images.php';
                 
        
                 if(!empty($_GET['id'])){
-                $product_id = $_GET['id'];
-                $images = Images::loadAllImagesById($connection,$product_id);
-                if($images == NULL){
-                    echo "Brak obrazkow";                    
+                    $product_id = $_GET['id'];
+                    $images = Images::loadAllImagesById($connection,$product_id);
+                        if($images == NULL){
+                        echo "Brak obrazkow";                    
+                        }else{
+                        foreach($images as $image){
+                        }
+                         }
                 }
-                else {
-                    foreach($images as $image){
-                    }
-                }}
                 
                 elseif(!empty($_GET['keywords'])){
-      $tytul = $_GET['keywords'];
-      $searchGames = Products::loadProductByTitle($connection,$tytul);
-      $product_id=$searchGames->getId();
-      $images = Images::loadAllImagesById($connection,$product_id);
-       if($images == NULL){
-                    echo "Brak obrazkow";                    
+                    $tytul = $_GET['keywords'];
+                    $searchGames = Products::loadProductByTitle($connection,$tytul);
+                    $product_id=$searchGames->getId();
+                    $images = Images::loadAllImagesById($connection,$product_id);
+                        if($images == NULL){
+                            echo "Brak obrazkow";                    
+                        }else {
+                            foreach($images as $image){
+                            }
+                         }
                 }
-                else {
-                    foreach($images as $image){
-                    }
-                }
-//      $sql = "SELECT tytul,opis FROM Products WHERE id=$tytul";
-//            echo "<tr>";
-//            echo "<th>Tytuł</th>";
-//            echo "<th>Platforma</th>";
-//            echo "<th>Gatunek</th>";
-//            echo "<th>Opis</th>";
-//            echo "<th>Cena</th>";
-//            echo "<th>Kategoria wiekowa</th>";
-//            echo "<th>Wydawca</th>";
-//            echo "<th>Język w grze</th>";
-//            echo "<th>Data premiery</th>";
-//            echo "<th>Promocja</th>";
-//            echo "<th>Edycja</th>";
-//            echo "</tr>";
-//         
-//                        echo "<tr><td colspan=1>".$searchGames->getTytul()."</td>";
-//                        echo "<td colspan=1>".$searchGames->getPlatforma()."</td>";
-//                        echo "<td colspan=1>".$searchGames->getGatunek()."</td>";
-//                        echo "<td colspan=1>".$searchGames->getOpis()."</td>";
-//                        echo "<td colspan=1>".$searchGames->getCena()."</td>";
-//                        echo "<td colspan=1>".$searchGames->getKategoriaWiekowa()."</td>";
-//                        echo "<td colspan=1>".$searchGames->getWydawca()."</td>";
-//                        echo "<td colspan=1>".$searchGames->getJezyk()."</td>";
-//                        echo "<td colspan=1>".$searchGames->getPromocja()."</td>";
-//                        echo "<td colspan=1>".$searchGames->getEdycja()."</td>";
-//                        echo "<td colspan=1>" .$searchGames->getGatunek()."</td></tr>";
-//        
-                }
+                
               ?>
       <div class="row">
           <div class="col-md-6">
@@ -150,7 +123,7 @@ require '../Class/Images.php';
                <?php
                $produkt = Products::loadProductsById($connection, $product_id);
                echo $produkt->getTytul()."<br>";        
-               echo $produkt->getCena(); 
+               echo "<td><a href='../Sites/basket.php?add=".$product_id."'>".$produkt->getCena()."</a></td>"
                 ?>
           </div>
       </div>
