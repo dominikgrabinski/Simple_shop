@@ -34,7 +34,7 @@ require '../Class/Products.php';?>
       <ul class="nav navbar-nav navbar-right">
         <li> <a href="../Sites/basket.php" data-toggle="modal"> Mój koszyk</a></li>
         <li> <a href="index1.php"> <?php if(!empty($_SESSION['email'])) echo "Witaj:". $_SESSION['email']; ?></a></li>
-        <li> <a href="logout.php"> <?php if(!empty($_SESSION['email'])) echo "wyloguj"; ?></a></li>
+        <li> <a href="logout.php"> <?php if(!empty($_SESSION['email'])) echo "Wyloguj"; ?></a></li>
       </ul> 
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
