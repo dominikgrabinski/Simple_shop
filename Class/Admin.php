@@ -24,6 +24,14 @@ class Admin {
     public function getId($id) {
         $this->id = $id;
     }
+    
+    public function setName($name) {
+        $this->name = $name;
+    }
+    
+    public function getName() {
+        return $this->name;
+    }
         
         
         
